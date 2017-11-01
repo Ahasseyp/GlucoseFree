@@ -17,29 +17,38 @@ $(document).ready(function(){
   var monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"]
 
-  $("#glevel_input").hide();
+  $("#glevel-input").hide();
+  $("#account-settings").hide();
 
-  $("#main_title").text(weekday[dow]+ ", "+monthNames[mm] + " " + dd);
+  if ($('input[name=gender-options]:checked', '#gender').val() == "Female") {
+    $(".demo-avatar").attr("src","images/female.jpg");
+  }
+  else if ($('input[name=gender-options]:checked', '#gender').val() == "Male") {
+    $(".demo-avatar").attr("src","images/male.jpg");
+  }
+
+  $("#main-title").text(weekday[dow]+ ", "+monthNames[mm] + " " + dd);
 
   $("#home").click(function(){
-    $("#main_title").text(weekday[dow]+ ", "+monthNames[mm] + " " + dd);
+    $("#main-title").text(weekday[dow]+ ", "+monthNames[mm] + " " + dd);
     $('.demo-content > div').show();
+    $("#account-settings").hide();
   });
 
   $("#assessment").click(function(){
-    $("#main_title").text("Assessment");
+    $("#main-title").text("Assessment");
     $('.demo-content > div').show();
     $('.demo-content > div:not(#assessment-card)').hide();
   });
 
   $("#food").click(function(){
-    $("#main_title").text("Food");
+    $("#main-title").text("Food");
     $('.demo-content > div').show();
     $('.demo-content > div:not(#food-card)').hide();
   });
 
   $("#emergency").click(function(){
-    $("#main_title").text("Emergency");
+    $("#main-title").text("Emergency");
     $('.demo-content > div').show();
     $('.demo-content > div:not(#emergency-card)').hide();
   });
@@ -60,20 +69,33 @@ $(document).ready(function(){
     $("#food-graph").attr("fill", "#388e3c");
   });
 
-  $("#manual_input_button").click(function(){
-    $("#glevel_input").show();
+  $("#manual-input-button").click(function(){
+    $("#glevel-input").show();
   });
 
   $("#settings").click(function(){
-    $("#main_title").text("Account Settings");
+    $("#main-title").text("Account Settings");
     $('.demo-content > div').hide();
+    $("#account-settings").show();
   });
 
-  $("#manual_input").on('keyup', function(e) {
+  $("#manual-input").on('keyup', function(e) {
     if(e.keyCode == 13) {
-      $("#glevel_input").hide();
-      $("#glevel_int").text($('#manual_input').val());
-      $('#manual_input').val(null);
+      $("#glevel-input").hide();
+      $("#glevel-int").text($('#manual-input').val());
+      $('#manual-input').val($("#glevel-int").text());
+    }
+  });
+
+  $("#user-name-inupt").val($('#user-name').text());
+
+  $("#change-user-settings").click(function(){
+    $('#user-name').text($("#user-name-inupt").val())
+    if ($('input[name=gender-options]:checked', '#gender').val() == "Female") {
+      $(".demo-avatar").attr("src","images/female.jpg");
+    }
+    else if ($('input[name=gender-options]:checked', '#gender').val() == "Male") {
+      $(".demo-avatar").attr("src","images/male.jpg");
     }
   });
 

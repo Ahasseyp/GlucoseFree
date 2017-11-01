@@ -19,7 +19,7 @@
       <!-- Header -->
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title" id="main_title">Home</span>
+          <span class="mdl-layout-title" id="main-title">Home</span>
           <div class="mdl-layout-spacer"></div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
             <i class="material-icons">refresh</i>
@@ -40,9 +40,9 @@
 
         <!-- Drawer Header -->
         <header class="demo-drawer-header">
-          <img src="images/user2.jpg" class="demo-avatar">
+          <img src="images/female.jpg" class="demo-avatar">
           <div class="demo-avatar-dropdown">
-            <span>Carla Hernandez</span>
+            <span id="user-name">Carla Hernandez</span>
             <div class="mdl-layout-spacer"></div>
             <button id="settings" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
               <i class="material-icons" role="presentation">settings</i>
@@ -73,18 +73,18 @@
           <div id="glevel" class="demo-card-square mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
             <div class="mdl-card__title mdl-card--expand">
               <h2 class="mdl-card__title-text">Glucose Level:&nbsp </h2>
-              <h2 class="mdl-card__title-text" id="glevel_int">93</h2>
+              <h2 class="mdl-card__title-text" id="glevel-int">93</h2>
             </div>
             <div class="mdl-card__supporting-text">
               Everything looks good!
             </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="manual_input_button">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="manual-input-button">
                 Input another level manually
               </a>
-              <form action="#" id="glevel_input">
+              <form action="#" id="glevel-input">
                 <div class="mdl-textfield mdl-js-textfield">
-                  <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="manual_input">
+                  <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="manual-input">
                   <label class="mdl-textfield__label" for="sample2">Number...</label>
                   <span class="mdl-textfield__error">Input is not a number!</span>
                 </div>
@@ -130,25 +130,25 @@
               <ul>
                 <li>
                   <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
-                  <input type="radio" id="list-option-1" class="mdl-radio__button" name="options" value="1" checked/>
+                  <input type="radio" id="list-option-1" class="mdl-radio__button" name="food-options" value="1" checked/>
                   <span class="mdl-checkbox__label">Pizza</span>
                 </label>
                 </li>
                 <li>
                   <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-2">
-                  <input type="radio" id="list-option-2" class="mdl-radio__button" name="options" value="2" />
+                  <input type="radio" id="list-option-2" class="mdl-radio__button" name="food-options" value="2" />
                   <span class="mdl-checkbox__label">Sopa</span>
                 </label>
                 </li>
                 <li>
                   <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-3">
-                  <input type="radio" id="list-option-3" class="mdl-radio__button" name="options" value="3" />
+                  <input type="radio" id="list-option-3" class="mdl-radio__button" name="food-options" value="3" />
                   <span class="mdl-checkbox__label">Tamales</span>
                 </label>
                 </li>
                 <li>
                   <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-4">
-                  <input type="radio" id="list-option-4" class="mdl-radio__button" name="options" value="4" />
+                  <input type="radio" id="list-option-4" class="mdl-radio__button" name="food-options" value="4" />
                   <span class="mdl-checkbox__label">Quesadillas</span>
                 </label>
                 </li>
@@ -158,6 +158,63 @@
               <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
                 <i class="material-icons">refresh</i>
               </button>
+            </div>
+          </div>
+
+          <!-- Account Settings -->
+          <div id="account-settings" class="mdl-cell mdl-cell--12-col">
+            <div class="mdl-grid">
+
+              <!-- Name -->
+              <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                <h5>Name</h5>
+                <form action="#">
+                  <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="user-name-inupt">
+                    <label class="mdl-textfield__label" for="sample2"></label>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Gender -->
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                <h5>Gender</h5>
+                <form id="gender">
+                  <ul>
+                    <li>
+                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="male">
+                        <input type="radio" id="male" class="mdl-radio__button" name="gender-options" value="Male">
+                        <span class="mdl-radio__label">Male</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="female">
+                        <input type="radio" id="female" class="mdl-radio__button" name="gender-options" value="Female" checked>
+                        <span class="mdl-radio__label">Female</span>
+                      </label>
+                    </li>
+                  </ul>
+                </form>
+              </div>
+
+              <!-- Age -->
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                <h5>Age</h5>
+                <form action="#">
+                  <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="age-inupt" value="25">
+                    <label class="mdl-textfield__label" for="sample2"></label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Save Changes -->
+              <div class="mdl-cell mdl-cell--12-col">
+                <button id="change-user-settings" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                  Save Changes
+                </button>
+              </div>
             </div>
           </div>
 

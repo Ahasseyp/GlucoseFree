@@ -202,6 +202,11 @@ _:-ms-input-placeholder, :root .demo-graph {
   height: 64px;
 }
 
-#glevel_input {
+#glevel-input {
   padding-left: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
 }

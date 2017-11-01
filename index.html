@@ -24,15 +24,6 @@
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
             <i class="material-icons">refresh</i>
           </button>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-              <i class="material-icons">search</i>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" id="search">
-              <label class="mdl-textfield__label" for="search">Enter your query...</label>
-            </div>
-          </div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
             <i class="material-icons">more_vert</i>
           </button>
@@ -46,17 +37,21 @@
 
       <!-- Drawer -->
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+
+        <!-- Drawer Header -->
         <header class="demo-drawer-header">
           <img src="images/user.jpg" class="demo-avatar">
           <div class="demo-avatar-dropdown">
             <span>Carla Hernandez</span>
             <div class="mdl-layout-spacer"></div>
-            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <button id="settings" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
               <i class="material-icons" role="presentation">settings</i>
               <span class="visuallyhidden">Accounts settings</span>
             </button>
           </div>
         </header>
+
+        <!-- Drawer Body -->
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-50 material-icons" role="presentation">home</i>Home</a>
           <a class="mdl-navigation__link" href="#" id="assessment"><i class="mdl-color-text--blue-grey-50 material-icons" role="presentation">assessment</i>Assessment</a>
@@ -65,6 +60,7 @@
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-50 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
         </nav>
+
       </div>
 
       <!-- Main -->
@@ -76,15 +72,23 @@
           <!-- Glucose Card -->
           <div id="glevel" class="demo-card-square mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
             <div class="mdl-card__title mdl-card--expand">
-              <h2 class="mdl-card__title-text">Glucose Level: 93</h2>
+              <h2 class="mdl-card__title-text">Glucose Level:&nbsp </h2>
+              <h2 class="mdl-card__title-text" id="glevel_int">93</h2>
             </div>
             <div class="mdl-card__supporting-text">
               Everything looks good!
             </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="manual_input_button">
                 Input another level manually
               </a>
+              <form action="#" id="glevel_input">
+                <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="manual_input">
+                  <label class="mdl-textfield__label" for="sample2">Number...</label>
+                  <span class="mdl-textfield__error">Input is not a number!</span>
+                </div>
+              </form>
             </div>
             <div class="mdl-card__menu">
               <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">

@@ -21,6 +21,11 @@ $(document).ready(function(){
 
   $("#main_title").text(weekday[dow]+ ", "+monthNames[mm] + " " + dd);
 
+  $("#home").click(function(){
+    $("#main_title").text(weekday[dow]+ ", "+monthNames[mm] + " " + dd);
+    $('.demo-content > div').show();
+  });
+
   $("#assessment").click(function(){
     $("#main_title").text("Assessment");
     $('.demo-content > div').show();

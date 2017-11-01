@@ -59,6 +59,11 @@ $(document).ready(function(){
     $("#glevel_input").show();
   });
 
+  $("#settings").click(function(){
+    $("#main_title").text("Account Settings");
+    $('.demo-content > div').hide();
+  });
+
   $("#manual_input").on('keyup', function(e) {
     if(e.keyCode == 13) {
       $("#glevel_input").hide();

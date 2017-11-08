@@ -177,7 +177,7 @@
               </div>
 
               <!-- Gender -->
-              <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
                 <h5>Gender</h5>
                 <form id="gender">
                   <ul>
@@ -198,11 +198,35 @@
               </div>
 
               <!-- Age -->
-              <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
                 <h5>Age</h5>
                 <form action="#">
                   <div class="mdl-textfield mdl-js-textfield">
                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="age-inupt" value="25">
+                    <label class="mdl-textfield__label" for="sample2"></label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Height -->
+              <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                <h5>Height (cm)</h5>
+                <form action="#">
+                  <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="heigh-input" value="175">
+                    <label class="mdl-textfield__label" for="sample2"></label>
+                    <span class="mdl-textfield__error">Input is not a number!</span>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Height -->
+              <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                <h5>Weigth (kg)</h5>
+                <form action="#">
+                  <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weight-input" value="74">
                     <label class="mdl-textfield__label" for="sample2"></label>
                     <span class="mdl-textfield__error">Input is not a number!</span>
                   </div>
@@ -215,8 +239,14 @@
                   Save Changes
                 </button>
               </div>
+
             </div>
           </div>
+
+          <!-- Alert Button -->
+          <button id="alert-button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--red-900 mdl-color-text--white">
+            <i class="material-icons">report_problem</i>
+          </button>
 
         </div>
       </main>

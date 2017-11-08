@@ -85,6 +85,7 @@ html, body {
 }
 
 .demo-charts {
+  position: relative;
   align-items: center;
 }
 
@@ -209,4 +210,10 @@ _:-ms-input-placeholder, :root .demo-graph {
 ul {
   list-style-type: none;
   padding-left: 0;
+}
+
+#alert-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
 }
